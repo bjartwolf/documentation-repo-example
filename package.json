@@ -27,5 +27,8 @@
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
     "*openapi.{json,yml,yaml}": "spectral lint"
+  },
+  "dependencies": {
+    "@openapi-contrib/json-schema-to-openapi-schema": "^2.1.0"
   }
 }
