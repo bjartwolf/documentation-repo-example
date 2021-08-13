@@ -1,8 +1,8 @@
-Forked from https://github.com/laat/documentation-repo-example with the intention of 
-setting up a minimal OpenAPI Specification of 
+Forked from https://github.com/laat/documentation-repo-example with the intention of
+setting up a minimal OpenAPI Specification of
 https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks
 
-This response is based on this configuration 
+This response is based on this configuration
 
 ```
                 endpoints.MapHealthChecks("/health", new HealthCheckOptions()

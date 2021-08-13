@@ -29,6 +29,7 @@
     "*openapi.{json,yml,yaml}": "spectral lint"
   },
   "dependencies": {
-    "@openapi-contrib/json-schema-to-openapi-schema": "^2.1.0"
+    "@openapi-contrib/json-schema-to-openapi-schema": "^2.1.0",
+    "to-json-schema": "^0.2.5"
   }
 }
