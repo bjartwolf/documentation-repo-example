@@ -63,7 +63,7 @@
             }
           }
         },
-        "security": [{ "petstore_auth": ["write:pets", "read:pets"] }]
+        "security": [{ "petstore_auth": ["read:health"] }]
       }
     }
   },
@@ -84,19 +84,42 @@
           "entries": {
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/Entry"
+              "anyOf": [
+                { "$ref": "#/components/schemas/FailedEntry" },
+                { "$ref": "#/components/schemas/SuccessEntry" }
+              ]
             }
           }
         }
       },
-      "Entry": {
+      "SuccessEntry": {
         "type": "object",
         "description": "Name of the healthcheck",
-        "required": ["data", "duration", "status", "tags"],
+        "required": ["duration", "status", "data", "tags"],
         "properties": {
           "data": { "type": "object" },
           "duration": { "type": "string" },
-          "status": { "type": "string" },
+          "status": { "type": "string", "pattern": "Healthy" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "FailedEntry": {
+        "type": "object",
+        "description": "Name of the healthcheck",
+        "required": [
+          "duration",
+          "status",
+          "tags",
+          "description",
+          "exception",
+          "data"
+        ],
+        "properties": {
+          "data": { "type": "object" },
+          "duration": { "type": "string" },
+          "exception": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string", "pattern": "Unhealthy" },
           "tags": { "type": "array", "items": { "type": "string" } }
         }
       }
