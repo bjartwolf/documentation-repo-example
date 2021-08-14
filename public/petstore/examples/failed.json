@@ -1,0 +1,1 @@
+{"status":"Unhealthy","totalDuration":"00:00:00.2294396","entries":{"sqlserver":{"data":{},"description":"Login failed for user \u0027Some User\u0027.","duration":"00:00:00.2078386","exception":"Login failed for user \u0027Some User\u0027.","status":"Unhealthy","tags":[]}}}
