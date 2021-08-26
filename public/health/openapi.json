@@ -62,8 +62,7 @@
               }
             }
           }
-        },
-        "security": [{ "petstore_auth": ["read:health"] }]
+        }
       }
     }
   },
